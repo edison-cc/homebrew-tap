@@ -22,8 +22,8 @@ class CursorUsage < Formula
   end
 
   test do
-    assert (bin/"cursor-usage-report").executable?
-    assert (pkgshare/"cursor-usage.5m.sh").executable?
+    assert_predicate bin/"cursor-usage-report", :executable?
+    assert_predicate pkgshare/"cursor-usage.5m.sh", :executable?
     system "/bin/bash", "-n", bin/"cursor-usage-report"
     system "/bin/bash", "-n", pkgshare/"cursor-usage.5m.sh"
   end
